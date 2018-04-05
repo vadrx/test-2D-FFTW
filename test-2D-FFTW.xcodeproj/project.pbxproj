@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3AED5C5F20768CB300F34E16 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5C5E20768CB300F34E16 /* main.cpp */; };
+		3AED5C6A20768D2200F34E16 /* HighResTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5C6820768D2200F34E16 /* HighResTimer.cpp */; };
+		3AED5C6C20768DB900F34E16 /* libfftw3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED5C6B20768DB900F34E16 /* libfftw3.3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		3AED5C5B20768CB300F34E16 /* test-2D-FFTW */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "test-2D-FFTW"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AED5C5E20768CB300F34E16 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3AED5C6620768CDE00F34E16 /* libfftw3f.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f.a; path = ../../../../usr/local/Cellar/fftw/3.3.7_1/lib/libfftw3f.a; sourceTree = "<group>"; };
+		3AED5C6820768D2200F34E16 /* HighResTimer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HighResTimer.cpp; sourceTree = "<group>"; };
+		3AED5C6920768D2200F34E16 /* HighResTimer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HighResTimer.hpp; sourceTree = "<group>"; };
+		3AED5C6B20768DB900F34E16 /* libfftw3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfftw3.3.dylib; path = ../../../../usr/local/Cellar/fftw/3.3.7_1/lib/libfftw3.3.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AED5C6C20768DB900F34E16 /* libfftw3.3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +50,7 @@
 			children = (
 				3AED5C5D20768CB300F34E16 /* test-2D-FFTW */,
 				3AED5C5C20768CB300F34E16 /* Products */,
+				3AED5C6520768CDD00F34E16 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +66,19 @@
 			isa = PBXGroup;
 			children = (
 				3AED5C5E20768CB300F34E16 /* main.cpp */,
+				3AED5C6820768D2200F34E16 /* HighResTimer.cpp */,
+				3AED5C6920768D2200F34E16 /* HighResTimer.hpp */,
 			);
 			path = "test-2D-FFTW";
+			sourceTree = "<group>";
+		};
+		3AED5C6520768CDD00F34E16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AED5C6B20768DB900F34E16 /* libfftw3.3.dylib */,
+				3AED5C6620768CDE00F34E16 /* libfftw3f.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AED5C6A20768D2200F34E16 /* HighResTimer.cpp in Sources */,
 				3AED5C5F20768CB300F34E16 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +258,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include/;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/fftw/3.3.7_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -246,6 +271,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include/;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/fftw/3.3.7_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
